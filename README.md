@@ -31,7 +31,7 @@ step:
   package. Either cancel and run `zypper dup` again later, or let zypper
   remove the package and reinstall it once the rebuild is out.
 - **New upstream release.** `.github/workflows/upstream-bump.yml` checks
-  upstream's latest release every 6 hours and opens a PR. OBS test-builds the
+  upstream's latest release every hour (at :17) and opens a PR. OBS test-builds the
   PR and it merges itself when the build is green. The merge triggers the real
   rebuild.
 

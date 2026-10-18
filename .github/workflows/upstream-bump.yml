@@ -15,7 +15,7 @@ name: upstream version bump
 
 on:
   schedule:
-    - cron: "43 */6 * * *"    # every 6 hours, at :43
+    - cron: "17 * * * *"    # every hour, at :17
   workflow_dispatch:
     inputs:
       version:
