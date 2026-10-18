@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!--
+  The upstream tarball is not stored in git. OBS fetches it at source-service
+  time with download_url; the spec checks its SHA256 in %prep.
+  scripts/bump-version.sh rewrites the URL and filename below (and Version and
+  src_sha256 in the spec) when upstream tags a new release.
+-->
+<services>
+  <service name="download_url">
+    <param name="url">https://github.com/xarblu/kwin-effects-better-blur-dx/archive/refs/tags/v2.6.0.tar.gz</param>
+    <param name="filename">kwin-effects-better-blur-dx-2.6.0.tar.gz</param>
+  </service>
+</services>

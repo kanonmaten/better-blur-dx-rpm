@@ -1,0 +1,19 @@
+# OBS SCM/CI workflow integration - PR builds only.
+# https://openbuildservice.org/help/manuals/obs-user-guide/cha.obs.scm_ci_workflow_integration.html
+#
+# Pushes to main are handled outside this file, by a runservice token +
+# /trigger/webhook. This file is reached only by the workflow token +
+# /trigger/workflow, wired to pull_request events (scripts/obs-bootstrap.sh).
+#
+# On a PR, branch the package into a scratch project pinned to the PR head,
+# build it (publishing disabled), and report status back to the PR. OBS
+# deletes the scratch project when the PR closes.
+
+pull_request:
+  steps:
+    - branch_package:
+        source_project: home:kanonmaten
+        source_package: kwin-effects-better-blur-dx
+        target_project: home:kanonmaten:ci
+  filters:
+    event: pull_request

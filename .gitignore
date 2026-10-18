@@ -1,0 +1,7 @@
+# rpmbuild / osc scratch
+*.tar.gz
+/BUILD/
+/BUILDROOT/
+/RPMS/
+/SRPMS/
+/SOURCES/
